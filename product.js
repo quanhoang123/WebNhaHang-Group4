@@ -3,12 +3,14 @@ var product=[
     id: "sp1",
     name : "Cua Hoang De",
     img : "imgs/cuahoangde.jpg",
+    note : "Size :1.7kg - 4kg/con (Bán chạy nhất từ 2kg - 3kg/con)", 
     price : 1400000
     },
     {
         id: "sp2",
         name : "TOM SU BAM TOI",
         img : "imgs/tomsu.png", 
+        note : "",
         price : 300000
         },
         {
@@ -122,7 +124,7 @@ function listWatch() {
     `<div class="col-12 col-sm-6 col-md-4 col-lg-3 p-4">										
         <div class="produre_box bg-white shadow-sm">										
             <div class="image_box">										
-                <img src="` + data.img + `" style="width:250px; height:200px;">										
+                <img src="` + data.img + `" style="width:260px; height:200px;">										
             </div>										
                 <div class="info_box p-3 bg-white">										
                     <p class="float-left font-weight-bold mb-0" style="font-size: 115%">` + data.name + `</p><p class="float-left font-weight-bold mb-2" style="font-size: 115%">` + data.price + `đ</p>									
@@ -158,14 +160,13 @@ document.getElementById("trending").innerHTML += prinf;
     }
     
 }
+
 listWatch();
 var getProduct=function(id){										
     let html = "";										
     let allWatch = JSON.parse(localStorage.getItem('listproduct'))									
 										
     let aa=allWatch[id];    
-
-
-    document.getElementById("printf_watch").innerHTML =  `${html}<img src="${aa.img}" style="width:50%">  <div style="font-size:20px">${aa.name}<div> <b>Giá: ${aa.price}đ `;																			
-								
+    document.getElementById("printf_watch").innerHTML =  `${html}<img src="${aa.img}" style="width:300px ;height:300px">  <div style="font-size:20px">${aa.name}<div> <b>Giá: ${aa.price}đ    
+    `;																										
     }

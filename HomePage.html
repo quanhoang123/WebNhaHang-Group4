@@ -8,16 +8,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   
-  <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="http://getbootstrap.com/examples/navbar-fixed-top/navbar-fixed-top.css" rel="stylesheet">
+  <!-- <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+  <!-- <link href="http://getbootstrap.com/examples/navbar-fixed-top/navbar-fixed-top.css" rel="stylesheet"> -->
   <script src="./js/ie-emulation-modes-warning.js"></script>
-
-  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>						 -->
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">						 -->
-    
-                          
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>						 -->
-  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>											 -->
 
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">						
@@ -27,24 +20,16 @@
   src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v7.0"></script>
 
 
+  <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
+  <!-- link css -->
+  <link rel="stylesheet" href="styleHompage.css">
 <!-- link footer -->
 <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
-
-
-  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous"> -->
-  <!-- <link rel="stylesheet" href="style.css">   -->
-
-
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
-  <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
   <title>HomePage</title>
 </head>
-
 <body >
   <header>
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background: rgb(255, 186, 0);">
@@ -53,33 +38,31 @@
           <img src=""> 
           <a class="navbar-brand" href="">Group4-Restaurent</a>
         </div>
-
-        <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;" style="color:black">
-        
+        <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;" style="color:black">      
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="">About us</a></li>
+            <li class="active"><a href="#home">Home</a></li>
+            <li><a href="#aboutus">About us</a></li>
         
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<span class="product"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="#">Sea Food</a></li>
-                <li><a href="#">jungle Food</a></li>
+                <li><a href="#">Jungle Food</a></li>
               </ul>
             </li>
             <li><a href="#">Donate</a></li>
-            <li><a href="#">Contact</a></li>
+            <li ><a href="#contact">Contact</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            <li><a href=""><span class="fas fa-card"></span>Card</a></li>
+            <li onclick="signin()"><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li onclick="singup()"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li onclick="addProductOnCard()"><a href=""><span class="fas fa-card"></span>Card</a></li>
           </ul>
           <form class="navbar-form navbar-right" action="/action_page.php">
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Search" name="search">
             </div>
-            <button type="submit" class="btn btn-default">Search</button>
+            <button type="submit" class="btn btn-default" onclick="searchProduct()">Search</button>
           </form>
         </div>
         <!--/.nav-collapse -->
@@ -87,7 +70,11 @@
     </nav>
   </header>
 
-  <div class="container-fluid">
+<div class="contentHomePage" style="background:rgb(	255, 253, 208);">
+<br>
+<br>
+<br>
+  <div class="container-fluid" id="home">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
@@ -95,25 +82,22 @@
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
       </ol>
-
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
         <div class="item active">
           <img
-            src="https://assets.vogue.com/photos/5a3aac8f0193fe386b1e3898/master/w_3000,h_2207,c_limit/vietnamese-food-holding.jpg"
-            alt="Los Angeles" style="width:100%; height: 400px;">
+            src="imgs/anhnen2.jpg"
+            alt="Los Angeles" style="width:100%; height: 600px;">
         </div>
 
         <div class="item">
-          <img src="imgs/anhnen1.jpg" alt="Chicago" style="width:100%; height: 400px;">
+          <img src="imgs/anhnen.jpg" alt="Chicago" style="width:100%; height: 600px;">
         </div>
 
         <div class="item">
-          <img src="imgs/anhnen1.jpg" alt="New York" style="width:100%; height: 400px;">
+          <img src="imgs/anhnen1.jpg" alt="New York" style="width:100%; height: 600px;">
         </div>
-
       </div>
-
       <!-- Left and right controls -->
       <a class="left carousel-control" href="#myCarousel" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left"></span>
@@ -123,67 +107,56 @@
         <span class="glyphicon glyphicon-chevron-right"></span>
         <span class="sr-only">Next</span>
       </a>
-
     </div>
       <div class="container product">
-          <div class="h3 mb-5">Trending Food</div>
-          <div class="row" id="trending"> </div>
-    
+          <div class="h3 mb-5">TRENDING FOOD</div>
+          <div class="row" id="trending"> 
+          </div> 
       </div>
       <script src="product.js"></script>
-
-
-
-
   </div>
-
+</div>
+  
+<div style="clear: both;"></div>
   <!-- footer -->
-  <div style="margin-top:100px; border:1px solid black">
-    <footer class="bg-light text-center text-lg-start">
+  <!-- <div class="footerHomePage" > -->
+    <footer class="bg-light text-center text-lg-start footerHomePage" >
       <!-- Grid container -->
       <div class="container p-6">
         <!--Grid row-->
         <div class="row">
           <!--Grid column-->
-          <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Contact</h5>
-    
-            <p>
-              email: amthucvietnam@qvvd.vn.com
+          <div class="col-sm-6 text">
+            <h2 class=" w3-wide" id="contact">Contact</h2>
+            <p style="font-size: large;">
+             <b> Email: <a href=""> amthucvietnam@qvvd.vn.com</a> 
             </p>
-              <p>
-              facebook: amthucvietnam-qvvd
-            </p>
-            <p>contac: (+84) 0355 739 816 </p>
+              <p style="font-size: large;"><b>  Facebook: </b><a href="">  amthucvietnam-qvvd </a>              
+            </p >
+            <p style="font-size: large;"> 
+             <b> Contac:</b> <a href=""> (+84) 0355 739 816</a></p>
           </div>
-          <!--Grid column-->
-    
-          <!--Grid column-->
-          <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-            <h5 class="text-uppercase">About us</h5>
-    
+          <!--Grid column--> 
+          <!--Grid column--> 
+              <h2 class="w3-wide">About us</h2>
             <p>
-              Our restaurant builds our brand based on the reputation and reviews from customers. 
-              With the slogan of food safety first. 
-              We always want to bring the best food to everyone.
+              Our restaurant builds our brand based on the reputation and reviews from customers. With the slogan of food safety first. We always want to bring the best food to everyone.
             </p>
           </div>
           <!--Grid column-->
         </div>
         <!--Grid row-->
-      </div>
+      <!-- </div> -->
       <!-- Grid container -->
-    
-      <!-- Copyright -->
-      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-        © 2021 Copyright:
-        <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-      </div>
-      <!-- Copyright -->
-    </footer>>
+            <!-- Copyright -->
+            <div class="text-center p-3 " style="background-color: rgba(0, 0, 0, 0.2)">
+              © 2021 Copyright:
+              <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+            </div>
+            <!-- Copyright -->
+    </footer>
   </div>
-
-
 </body>
+
 
 </html>
