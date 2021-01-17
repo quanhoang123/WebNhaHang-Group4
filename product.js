@@ -170,3 +170,11 @@ var getProduct=function(id){
     document.getElementById("printf_watch").innerHTML =  `${html}<img src="${aa.img}" style="width:300px ;height:300px">  <div style="font-size:20px">${aa.name}<div> <b>Giá: ${aa.price}đ    
     `;																										
     }
+function IcoinFunction() {
+        var x = document.getElementById("navbarCollapse");
+        if (x.className === "topNarbar") {
+          x.className += " responsive";
+        } else {
+          x.className = "topNarbar";
+        }
+      }
